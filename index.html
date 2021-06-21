@@ -58,11 +58,21 @@ and DES Y3 chains from this <a href="https://arxiv.org/abs/2105.13549">paper</a>
                         if(params.planck_2018 == "y"){
                             return "plots/2D_" + params.cosmo_par + "_des_y3_planck_2018.png";
                         }
-                        return "plots/2D_" + params.cosmo_par + "_des_y3.png";
+                        if(params.planck_2018 == "n"){
+                        return "plots/2D_" + params.cosmo_par + "_des_y3.png";}
                     }
                     else {
-                        return "plots/2D_" + params.cosmo_par + "_planck_2018.png";
+                        if (params.planck_2018 == "y"){
+                        return "plots/2D_" + params.cosmo_par + "_planck_2018.png";}
+                        else{
+                            return "plots/choose_box.png"
+                        }
                     }
+                });
+                pager.setparams({
+                        "cosmo_par": "om_s8",
+                        "des_y3": "n",
+                        "planck_2018": "n",
                 });
         </script>
     </figure>
