@@ -26,13 +26,13 @@ and chain outputs (e.g. 1D contour, tension metrics, etc) in the final product.
 <br> 
 Try it out by clicking the boxes below to specify the combinations of 
 cosmological parameters you are interested in and the cosmological experiment 
-(DES Y3 and Planck 2018 (using DES Y3 priors) at the moment), to show the 2D contour plot.
+(DES Y1 and Planck 2015 (using DES Y1 priors) at the moment), to show the 2D contour plot in a wCDM model.
 <br> 
 <br> 
 Written by Agnès Ferté, using the figure-pager package written by Justin Willmert 
 <a href="https://github.com/jmert/html-figure-pager">here</a>,
 a plotting script written by Jessie Muir for DES, using CosmoSIS 
-and DES Y3 chains from this <a href="https://arxiv.org/abs/2105.13549">paper</a>.
+and DES Y1 chains from this <a href="https://arxiv.org/abs/1708.01530">paper</a>.
 </p>
 
 <hr>
@@ -48,22 +48,22 @@ and DES Y3 chains from this <a href="https://arxiv.org/abs/2105.13549">paper</a>
         <script type="text/javascript">
         pager.link("#contour_plots",
                 {
-                    "Combination of cosmological parameters|cosmo_par": ["(Om,s8)|om_s8","(Om,h0)|om_h0","(s8,h0)|s8_h0"],
+                    "Combination of cosmological parameters (in wCDM)|cosmo_par": ["(Om,s8)|om_s8","(Om,w)|om_w","(s8,w)|s8_w"],
                     "Experiments:|": [""],
-                    "DES Y3|des_y3": ["Yes|y", "No|n"],
-                    "Planck 2018|planck_2018": ["Yes|y", "No|n"],                    
+                    "DES Y1|des_y1": ["Yes|y", "No|n"],
+                    "Planck 2015|planck_2015": ["Yes|y", "No|n"],                    
                 },
                 function(params) {
-                    if (params.des_y3 == "y"){
-                        if(params.planck_2018 == "y"){
-                            return "plots/2D_" + params.cosmo_par + "_des_y3_planck_2018.png";
+                    if (params.des_y1 == "y"){
+                        if(params.planck_2015 == "y"){
+                            return "plots/2D_" + params.cosmo_par + "_des_y1_planck_2015.png";
                         }
-                        if(params.planck_2018 == "n"){
-                        return "plots/2D_" + params.cosmo_par + "_des_y3.png";}
+                        if(params.planck_2015 == "n"){
+                        return "plots/2D_" + params.cosmo_par + "_des_y1.png";}
                     }
                     else {
-                        if (params.planck_2018 == "y"){
-                        return "plots/2D_" + params.cosmo_par + "_planck_2018.png";}
+                        if (params.planck_2015 == "y"){
+                        return "plots/2D_" + params.cosmo_par + "_planck_2015.png";}
                         else{
                             return "plots/choose_box.png"
                         }
@@ -71,8 +71,8 @@ and DES Y3 chains from this <a href="https://arxiv.org/abs/2105.13549">paper</a>
                 });
                 pager.setparams({
                         "cosmo_par": "om_s8",
-                        "des_y3": "n",
-                        "planck_2018": "n",
+                        "des_y1": "n",
+                        "planck_2015": "n",
                 });
         </script>
     </figure>
